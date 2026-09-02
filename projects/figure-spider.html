@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-ru="Figure Spider — Андрей Григорьев" data-en="Figure Spider — Andrey Grigoryev">Figure Spider — Андрей Григорьев</title>
+<meta name="description"
+      content="Головоломка про паука: распознавание фигур на графе пересечений отрезков, процедурная анимация ног. Команда из четырёх человек, я вёл."
+      data-ru="Головоломка про паука: распознавание фигур на графе пересечений отрезков, процедурная анимация ног. Команда из четырёх человек, я вёл."
+      data-en="A puzzle game about a spider: figure detection on a segment intersection graph, procedural leg animation. Team of four, I led it.">
+<meta name="theme-color" content="#0a0c10">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🕷️</text></svg>">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../">Андрей Григорьев<span class="dot">.</span></a>
+    <nav class="topnav">
+      <a href="../#projects"><span lang="ru">Проекты</span><span lang="en">Projects</span></a>
+      <a href="../#experience"><span lang="ru">Опыт</span><span lang="en">Experience</span></a>
+      <a href="../#contact"><span lang="ru">Контакты</span><span lang="en">Contact</span></a>
+    </nav>
+    <button class="langtoggle" type="button">EN</button>
+  </div>
+</div>
+
+<main>
+<article class="project-hero">
+  <div class="wrap">
+    <a class="backlink" href="../#projects">
+      <span lang="ru">← Все проекты</span><span lang="en">← All projects</span>
+    </a>
+
+    <p class="role" style="font-family:var(--mono);color:var(--accent);font-size:14px;margin:0 0 14px">
+      Unity · C# · 2026
+    </p>
+    <h1>Figure Spider</h1>
+    <p class="lede" style="margin-top:18px">
+      <span lang="ru">Паук стреляет нитями между точками опоры. Замкнул фигуру — получил очки. Чем
+        крупнее и сложнее фигура, тем дороже она стоит.</span>
+      <span lang="en">A spider shoots web strands between anchor points. Close a shape and it scores.
+        The bigger and more complex the shape, the more it is worth.</span>
+    </p>
+
+    <div class="stage">
+      <img src="../assets/media/figure-spider/shot1.jpg" alt="Figure Spider" width="1280" height="639">
+    </div>
+
+    <dl class="facts">
+      <div><dt><span lang="ru">Движок</span><span lang="en">Engine</span></dt><dd>Unity, C#</dd></div>
+      <div><dt><span lang="ru">Платформа</span><span lang="en">Platform</span></dt><dd>Windows</dd></div>
+      <div><dt><span lang="ru">Срок</span><span lang="en">Timeline</span></dt>
+        <dd><span lang="ru">около трёх месяцев</span><span lang="en">about three months</span></dd></div>
+      <div><dt><span lang="ru">Роль</span><span lang="en">Role</span></dt>
+        <dd><span lang="ru">тимлид, архитектура, большая часть кода</span><span lang="en">team lead, architecture, most of the code</span></dd></div>
+      <div><dt><span lang="ru">Команда</span><span lang="en">Team</span></dt>
+        <dd><span lang="ru">четыре человека</span><span lang="en">four people</span></dd></div>
+    </dl>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="https://veighteen.itch.io/figurespider" rel="noopener">
+        <span lang="ru">Скачать на itch.io</span><span lang="en">Download on itch.io</span>
+      </a>
+      <a class="btn" href="https://github.com/broshkin/FigureSpider" rel="noopener">
+        <span lang="ru">Код на GitHub</span><span lang="en">Code on GitHub</span>
+      </a>
+      <a class="btn" href="https://telegra.ph/Istorii-igr-studentov-Figure-Spider-07-23" rel="noopener">
+        <span lang="ru">Статья о проекте</span><span lang="en">Article (Russian)</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+<section>
+  <div class="wrap">
+    <div class="prose">
+      <h3><span lang="ru">Откуда взялась идея</span><span lang="en">Where the idea came from</span></h3>
+      <p>
+        <span lang="ru">Я поднял голову на перекрёстке и увидел, что путаница проводов над улицей сложилась
+          в почти правильный шестиугольник. Вся игра — это наблюдение, превращённое в правило начисления
+          очков.</span>
+        <span lang="en">I looked up at a street intersection and noticed that the tangle of overhead wires
+          had formed an almost perfect hexagon. The whole game is that observation turned into a scoring
+          rule.</span>
+      </p>
+
+      <h3><span lang="ru">Что делал я</span><span lang="en">What I did</span></h3>
+      <p>
+        <span lang="ru">Я был тимлидом: задал архитектуру, разбил работу между четырьмя людьми и написал
+          большую часть кода в репозитории — граф пересечений, формулу очков, систему событий и процедурную
+          анимацию ног. Команда — второкурсники образовательной программы «Технологии разработки
+          компьютерных игр» ИТМО: Фёдор Сомкин, Данила Воронинский, Ангелина Казак и я.</span>
+        <span lang="en">I was the team lead: I set the architecture, split the work between four people and
+          wrote most of the code in the repository — the intersection graph, the scoring formula, the event
+          system and the procedural leg animation. The team were second-year students of the Game
+          Development Technologies programme at ITMO: Fyodor Somkin, Danila Voroninsky, Angelina Kazak and
+          me.</span>
+      </p>
+
+      <h3><span lang="ru">Техническое решение</span><span lang="en">How it works</span></h3>
+      <p>
+        <span lang="ru"><strong>Распознавание фигур работает на графе пересечений отрезков.</strong> Каждая
+          нить — отрезок. Когда новая нить пересекает уже натянутые, точки пересечения становятся вершинами
+          графа, а куски нитей между ними — рёбрами. Замкнутая фигура — это цикл в таком графе. Это та часть
+          проекта, на которую я показал бы в первую очередь: единственная система здесь, которая является
+          настоящей алгоритмической задачей, а не обвязкой движка.</span>
+        <span lang="en"><strong>Figure detection runs on a segment intersection graph.</strong> Every strand
+          is a segment. When a new strand crosses the existing ones, the intersections become graph nodes
+          and the pieces between them become edges. A closed figure is a cycle in that graph. This is the
+          part I would point at first: the one system in the project that is a real algorithmic problem
+          rather than engine glue.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Очки считает формула, а не таблица.</strong> Стоимость замкнутой фигуры
+          выводится из её геометрии, поэтому новые фигуры оцениваются осмысленно без ручной настройки
+          каждой.</span>
+        <span lang="en"><strong>Scoring is formula-driven, not a lookup table.</strong> The value of a closed
+          shape is computed from its geometry, so new shapes score sensibly without anyone hand-tuning
+          them.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Паук ходит на процедурной анимации.</strong> Ноги ставятся рейкастом по
+          поверхности и переставляются, когда текущая точка опоры уходит слишком далеко от нужной; корпус
+          следует за средним положением ног. Клипов анимации для ходьбы нет вообще.</span>
+        <span lang="en"><strong>The spider walks on procedural animation.</strong> Legs are placed by
+          raycasting against the surface and step when the current foot gets too far from where it should
+          be, with the body following the average of the leg positions. There are no animation clips for
+          locomotion at all.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Погодные события меняют поведение паутины.</strong> Пять событий — туман,
+          заморозка, дождь, песок и ветер — сделаны отдельными классами поверх общей базы, поэтому шестое
+          добавляется, не трогая менеджер.</span>
+        <span lang="en"><strong>Weather events change how the web behaves.</strong> Five events — fog,
+          freeze, rain, sand and wind — are separate classes over a shared base, so adding a sixth does not
+          touch the manager.</span>
+      </p>
+
+      <h3><span lang="ru">Результат</span><span lang="en">Outcome</span></h3>
+      <p>
+        <span lang="ru">Сборка выложена на itch.io. Игра показана на ITMO GameDay и вошла в число лучших игр
+          показа по голосованию зрителей.</span>
+        <span lang="en">The build is public on itch.io. The game was showcased at ITMO GameDay and voted
+          among the best games of the showcase by the audience.</span>
+      </p>
+    </div>
+
+    <div class="gallery">
+      <figure>
+        <img src="../assets/media/figure-spider/cover.jpg" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="../assets/media/figure-spider/shot2.jpg" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="../assets/media/figure-spider/shot3.jpg" alt="" loading="lazy">
+      </figure>
+      <figure>
+        <img src="../assets/media/figure-spider/spider.jpg" alt="" loading="lazy">
+        <figcaption><span lang="ru">Паук на нити: ноги ставятся рейкастом, клипов ходьбы нет.</span>
+          <span lang="en">The spider on a strand: legs placed by raycast, no walk clips.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/media/figure-spider/gameday.jpg" alt="" loading="lazy">
+        <figcaption><span lang="ru">Показ на ITMO GameDay.</span><span lang="en">Showcase at ITMO GameDay.</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="callout">
+      <span lang="ru"><b>Где смотреть код.</b> Мой код лежит в <code>Assets/Scripts/</code>, остальное в
+        <code>Assets/</code> — покупные ассеты и плагины. Начать стоит с
+        <code>GameCore/SegmentIntersectionGraph.cs</code>.</span>
+      <span lang="en"><b>Where to look in the code.</b> My own code is under <code>Assets/Scripts/</code>;
+        everything else in <code>Assets/</code> is store assets and plugins. Start with
+        <code>GameCore/SegmentIntersectionGraph.cs</code>.</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="../"><span lang="ru">Главная</span><span lang="en">Home</span></a>
+      <a href="mailto:and.grigoryev2017@gmail.com">and.grigoryev2017@gmail.com</a>
+      <a href="https://github.com/broshkin" rel="noopener">GitHub</a>
+      <a href="https://t.me/grigoryev_andrew" rel="noopener">Telegram</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

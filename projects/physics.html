@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-ru="Let's learn physics! — Андрей Григорьев" data-en="Let's learn physics! — Andrey Grigoryev">Let's learn physics! — Андрей Григорьев</title>
+<meta name="description"
+      content="Обучающая игра по физике для ПК и VR на Quest 2. Один и тот же предмет поднимаешь на Земле и на Луне. Unity, Unity XR."
+      data-ru="Обучающая игра по физике для ПК и VR на Quest 2. Один и тот же предмет поднимаешь на Земле и на Луне. Unity, Unity XR."
+      data-en="An educational physics game for PC and VR on Quest 2. You pick up the same object on Earth and on the Moon. Unity, Unity XR.">
+<meta name="theme-color" content="#0a0c10">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🕷️</text></svg>">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../">Андрей Григорьев<span class="dot">.</span></a>
+    <nav class="topnav">
+      <a href="../#projects"><span lang="ru">Проекты</span><span lang="en">Projects</span></a>
+      <a href="../#experience"><span lang="ru">Опыт</span><span lang="en">Experience</span></a>
+      <a href="../#contact"><span lang="ru">Контакты</span><span lang="en">Contact</span></a>
+    </nav>
+    <button class="langtoggle" type="button">EN</button>
+  </div>
+</div>
+
+<main>
+<article class="project-hero">
+  <div class="wrap">
+    <a class="backlink" href="../#projects">
+      <span lang="ru">← Все проекты</span><span lang="en">← All projects</span>
+    </a>
+
+    <p class="role" style="font-family:var(--mono);color:var(--accent);font-size:14px;margin:0 0 14px">
+      Unity · VR · Quest 2 · 2022
+    </p>
+    <h1>Let's learn physics!</h1>
+    <p class="lede" style="margin-top:18px">
+      <span lang="ru">Сюжетная обучающая игра по физике для ПК и для VR на Oculus Quest 2. Урок проходишь
+        руками, а не чтением текста.</span>
+      <span lang="en">A story-driven educational physics game for PC and for VR on Oculus Quest 2. You work
+        through a lesson with your hands rather than by reading text.</span>
+    </p>
+
+    <button class="trailer" type="button" data-video="jTbutrCdtlQ" data-title="Let's learn physics! VR Trailer">
+      <img src="../assets/media/physics/poster.jpg" alt="">
+      <span class="play"><span>▶ <span lang="ru">Трейлер</span><span lang="en">Trailer</span></span></span>
+    </button>
+
+    <dl class="facts">
+      <div><dt><span lang="ru">Движок</span><span lang="en">Engine</span></dt><dd>Unity, C#, Unity XR</dd></div>
+      <div><dt><span lang="ru">Платформы</span><span lang="en">Platforms</span></dt><dd>Windows, Oculus Quest 2</dd></div>
+      <div><dt><span lang="ru">Когда</span><span lang="en">When</span></dt>
+        <dd><span lang="ru">конец 2022</span><span lang="en">late 2022</span></dd></div>
+      <div><dt><span lang="ru">Роль</span><span lang="en">Role</span></dt>
+        <dd><span lang="ru">весь проект в одиночку</span><span lang="en">solo project</span></dd></div>
+      <div><dt><span lang="ru">Результат</span><span lang="en">Result</span></dt>
+        <dd><span lang="ru">победитель «Инженеров будущего»</span><span lang="en">winner, "Engineers of the Future"</span></dd></div>
+    </dl>
+
+    <div class="actions">
+      <a class="btn" href="https://github.com/broshkin/Let-s-learn-physics-" rel="noopener">
+        <span lang="ru">Код на GitHub</span><span lang="en">Code on GitHub</span>
+      </a>
+      <a class="btn" href="https://youtu.be/jTbutrCdtlQ" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</article>
+
+<section>
+  <div class="wrap">
+    <div class="prose">
+      <h3><span lang="ru">Задача</span><span lang="en">The problem</span></h3>
+      <p>
+        <span lang="ru">Объяснить разницу между весом и массой текстом почти невозможно — школьник кивает и
+          не понимает. Идея была в том, чтобы дать эту разницу почувствовать: взять один и тот же предмет на
+          Земле и на Луне.</span>
+        <span lang="en">Explaining the difference between weight and mass in text almost never works — the
+          student nods and does not get it. The idea was to let them feel the difference instead: pick up
+          the same object on Earth and on the Moon.</span>
+      </p>
+
+      <h3><span lang="ru">Техническое решение</span><span lang="en">How it works</span></h3>
+      <p>
+        <span lang="ru"><strong>Вес против массы — показано, а не рассказано.</strong>
+          <code>WeightChanger.cs</code> меняет гравитацию, под которой живёт сцена, и для земной и лунной
+          частей заведены отдельные диалоговые ветки. Ты поднимаешь один и тот же предмет в двух местах и
+          чувствуешь разницу вместо того, чтобы услышать число.</span>
+        <span lang="en"><strong>Weight versus mass, demonstrated instead of explained.</strong>
+          <code>WeightChanger.cs</code> changes the gravity the scene runs under, and there are separate
+          dialogue tracks for the Earth and the Moon sections. You pick the same object up in both places
+          and feel the difference rather than being told a number.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Взаимодействие вынесено в один центр.</strong> <code>InteractionManager.cs</code>
+          решает, что игрок сейчас может взять или использовать. Именно поэтому одни и те же уроки уехали и в
+          сборку под мышь с клавиатурой, и в VR-сборку без раздвоения логики урока.</span>
+        <span lang="en"><strong>Interaction is centralised.</strong> <code>InteractionManager.cs</code>
+          decides what the player is currently able to grab or use. That is what made it possible to ship
+          the same lessons to both a mouse-and-keyboard build and a VR build without forking the lesson
+          logic.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>В VR добавлено управление взглядом.</strong> <code>OnEye.cs</code> отвечает за
+          взаимодействие по взгляду там, где в шлеме до предмета физически не дотянуться.</span>
+        <span lang="en"><strong>VR adds gaze interaction.</strong> <code>OnEye.cs</code> handles gaze-based
+          interaction for the parts of the lessons where the player cannot reach an object in the
+          headset.</span>
+      </p>
+      <p>
+        <span lang="ru">Уроки ведёт диалоговая система (<code>DialogSystem.cs</code> и варианты под локации), а
+          практическая часть блока про конструкции — упражнение на постройку моста
+          (<code>BridgePractice.cs</code>).</span>
+        <span lang="en">Lessons are driven by a dialogue system (<code>DialogSystem.cs</code> plus per-location
+          variants), and the practical task at the end of the structures lesson is a bridge-building exercise
+          (<code>BridgePractice.cs</code>).</span>
+      </p>
+
+      <h3><span lang="ru">Что бы я сделал иначе сегодня</span><span lang="en">What I would do differently today</span></h3>
+      <p>
+        <span lang="ru">Уроки стали бы контентом, а не скриптами. Сейчас <code>FirstLesson.cs</code> зашивает
+          один урок в код, и второй урок означает второй класс. Урок должен быть данными, которые исполняет
+          один общий раннер.</span>
+        <span lang="en">Lessons would be content, not scripts. Right now <code>FirstLesson.cs</code> hardcodes
+          one lesson, and adding a second one means writing a second class. A lesson should be data that a
+          single runner executes.</span>
+      </p>
+
+      <div class="callout">
+        <span lang="ru"><b>Сколько этому лет.</b> Конец 2022 года — это самое старое, что лежит у меня в
+          публичных репозиториях, и это школьный проект, а не коммерческий. Я держу его открытым ради
+          VR-сборки и сравнения Земли с Луной, а не ради кода. Как я пишу сегодня — смотрите
+          <a href="figure-spider.html">Figure Spider</a>.</span>
+        <span lang="en"><b>How old this is.</b> Late 2022 — the oldest thing in my public repositories, and a
+          school project rather than a commercial one. I keep it public for the VR build and the Earth/Moon
+          comparison, not for the code. For how I write today, see
+          <a href="figure-spider.html">Figure Spider</a>.</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="../"><span lang="ru">Главная</span><span lang="en">Home</span></a>
+      <a href="mailto:and.grigoryev2017@gmail.com">and.grigoryev2017@gmail.com</a>
+      <a href="https://github.com/broshkin" rel="noopener">GitHub</a>
+      <a href="https://t.me/grigoryev_andrew" rel="noopener">Telegram</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

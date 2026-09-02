@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-ru="Berloga: Destroy(evil) — Андрей Григорьев" data-en="Berloga: Destroy(evil) — Andrey Grigoryev">Berloga: Destroy(evil) — Андрей Григорьев</title>
+<meta name="description"
+      content="Сюжетная 2.5D-головоломка: машинам задают последовательности команд. 7 место по стране на НТО. Unity, C#."
+      data-ru="Сюжетная 2.5D-головоломка: машинам задают последовательности команд. 7 место по стране на НТО. Unity, C#."
+      data-en="A story-driven 2.5D puzzle game where you give machines sequences of commands. 7th nationally at the NTO olympiad. Unity, C#.">
+<meta name="theme-color" content="#0a0c10">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🕷️</text></svg>">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../">Андрей Григорьев<span class="dot">.</span></a>
+    <nav class="topnav">
+      <a href="../#projects"><span lang="ru">Проекты</span><span lang="en">Projects</span></a>
+      <a href="../#experience"><span lang="ru">Опыт</span><span lang="en">Experience</span></a>
+      <a href="../#contact"><span lang="ru">Контакты</span><span lang="en">Contact</span></a>
+    </nav>
+    <button class="langtoggle" type="button">EN</button>
+  </div>
+</div>
+
+<main>
+<article class="project-hero">
+  <div class="wrap">
+    <a class="backlink" href="../#projects">
+      <span lang="ru">← Все проекты</span><span lang="en">← All projects</span>
+    </a>
+
+    <p class="role" style="font-family:var(--mono);color:var(--accent);font-size:14px;margin:0 0 14px">
+      Unity · C# · 2023–2024
+    </p>
+    <h1>Berloga: Destroy(evil)</h1>
+    <p class="lede" style="margin-top:18px">
+      <span lang="ru">Сюжетная 2.5D-головоломка. Машинами не управляешь напрямую: ты задаёшь им
+        последовательность команд и смотришь, решает ли она комнату.</span>
+      <span lang="en">A story-driven 2.5D puzzle game. You do not control the machines directly: you give
+        them a sequence of commands and watch whether the sequence solves the room.</span>
+    </p>
+
+    <div class="stage">
+      <video src="../assets/media/berloga/loop.mp4" poster="../assets/media/berloga/poster.jpg"
+             autoplay muted loop playsinline preload="metadata"
+             aria-label="Berloga: Destroy(evil) — геймплей"></video>
+    </div>
+
+    <dl class="facts">
+      <div><dt><span lang="ru">Движок</span><span lang="en">Engine</span></dt><dd>Unity, C#</dd></div>
+      <div><dt><span lang="ru">Платформа</span><span lang="en">Platform</span></dt><dd>Windows</dd></div>
+      <div><dt><span lang="ru">Повод</span><span lang="en">Context</span></dt>
+        <dd><span lang="ru">НТО, профиль «Разработка компьютерных игр»</span><span lang="en">NTO olympiad, Game Development track</span></dd></div>
+      <div><dt><span lang="ru">Роль</span><span lang="en">Role</span></dt>
+        <dd><span lang="ru">программист, тимлид</span><span lang="en">programmer, team lead</span></dd></div>
+      <div><dt><span lang="ru">Результат</span><span lang="en">Result</span></dt>
+        <dd><span lang="ru">7 место по стране</span><span lang="en">7th nationally</span></dd></div>
+    </dl>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="https://youtu.be/iN75cSbstK8" rel="noopener">
+        <span lang="ru">Смотреть трейлер</span><span lang="en">Watch the trailer</span>
+      </a>
+      <a class="btn" href="https://github.com/broshkin/Berloga" rel="noopener">
+        <span lang="ru">Код на GitHub</span><span lang="en">Code on GitHub</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+<section>
+  <div class="wrap">
+    <div class="prose">
+      <h3><span lang="ru">Задача</span><span lang="en">The problem</span></h3>
+      <p>
+        <span lang="ru">Игра делалась под олимпиаду НТО с жёстким дедлайном и в команде. Уровни надо было
+          собирать быстро и много, а сюжет и головоломки писались параллельно с кодом. Значит, движок игры
+          должен был позволять придумать новую комнату без единой строчки нового кода.</span>
+        <span lang="en">The game was built for the NTO olympiad against a hard deadline, in a team. Levels
+          had to be authored quickly and in quantity, while the story and the puzzles were being written
+          alongside the code. So the game had to let us invent a new room without writing new code.</span>
+      </p>
+
+      <h3><span lang="ru">Что делал я</span><span lang="en">What I did</span></h3>
+      <p>
+        <span lang="ru">Я был программистом и тимлидом: весь код игры и координация команды из четырёх
+          человек — Артемий Приоров (документация и звук), Григорий Ларкин (2D-графика и тестирование),
+          Полина Внукова (3D-модели и текстуры).</span>
+        <span lang="en">I was the programmer and the team lead: all of the game code, plus coordinating a
+          team of four — Artemiy Priorov (documentation and audio), Grigory Larkin (2D art and testing),
+          Polina Vnukova (3D models and textures).</span>
+      </p>
+
+      <h3><span lang="ru">Техническое решение</span><span lang="en">How it works</span></h3>
+      <p>
+        <span lang="ru"><strong>Всё, что умеет машина, — это объект-команда.</strong> Есть базовый
+          <code>Action</code> и около двух десятков конкретных: проехать вперёд, повернуть, включить
+          двигатель, открыть портал, повернуть зеркало по X или по Y, вспахать поле, засеять, полить,
+          удобрить. Головоломки собираются композицией этих команд, а не отдельной логикой под каждый
+          уровень — именно поэтому уровни удалось быстро дописывать у дедлайна.</span>
+        <span lang="en"><strong>Everything a machine can do is a command object.</strong> There is a base
+          <code>Action</code> and about two dozen concrete ones: move forward, rotate, start the engine,
+          open a portal, rotate a mirror around X or Y, plough a field, sow it, water it, fertilise it.
+          Puzzles are built by composing these rather than by writing per-puzzle logic — which is exactly
+          why the levels could be authored quickly near the deadline.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>У каждого интерактивного объекта своя машина состояний.</strong>
+          <code>CarStates</code>, <code>CraneStates</code> и парные к ним файлы действий держат правила
+          объекта рядом с самим объектом, а не в одном центральном контроллере. Крану не нужно знать, что
+          такое машина.</span>
+        <span lang="en"><strong>Each interactable object has its own state machine.</strong>
+          <code>CarStates</code>, <code>CraneStates</code> and their matching action files keep an object's
+          rules next to the object instead of in one central controller. A crane does not need to know what
+          a car is.</span>
+      </p>
+      <p>
+        <span lang="ru">Поверх этого — система диалогов с триггерами для сюжетных сцен и система артефактов
+          и алтарей, которая гейтит продвижение по игре.</span>
+        <span lang="en">On top of that there is a dialogue system with triggers for the story sections, and
+          an artefact and altar system that gates progress.</span>
+      </p>
+
+      <h3><span lang="ru">Что бы я сделал иначе сегодня</span><span lang="en">What I would do differently today</span></h3>
+      <p>
+        <span lang="ru">Команды стали бы данными, а не классами. Из двадцати трёх наследников
+          <code>Action</code> около пятнадцати отличаются только тем, какое значение они кладут. Сегодня я
+          сделал бы один тип действия, настраиваемый через ScriptableObject, чтобы геймдизайнер мог добавить
+          машине новый глагол без программиста.</span>
+        <span lang="en">Actions would be data, not classes. Of the twenty-three <code>Action</code>
+          subclasses, about fifteen differ only in which value they push. Today I would make one action type
+          configured by a ScriptableObject, so a designer could add a machine verb without a
+          programmer.</span>
+      </p>
+
+      <h3><span lang="ru">Результат</span><span lang="en">Outcome</span></h3>
+      <p>
+        <span lang="ru">7 место по стране на НТО, профиль «Разработка компьютерных игр», сезон 2023/24.</span>
+        <span lang="en">7th place nationally at the National Technology Olympiad, Game Development track,
+          2023/24.</span>
+      </p>
+    </div>
+
+    <div class="gallery">
+      <figure>
+        <img src="../assets/media/berloga/title.jpg" alt="" loading="lazy">
+        <figcaption><span lang="ru">Титульный экран.</span><span lang="en">Title screen.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/media/berloga/team.jpg" alt="" loading="lazy">
+        <figcaption><span lang="ru">Команда проекта.</span><span lang="en">The project team.</span></figcaption>
+      </figure>
+    </div>
+
+    <button class="trailer" type="button" data-video="iN75cSbstK8" data-title="Berloga: Destroy(evil) Trailer">
+      <img src="../assets/media/berloga/poster.jpg" alt="">
+      <span class="play"><span>▶ <span lang="ru">Трейлер</span><span lang="en">Trailer</span></span></span>
+    </button>
+
+    <div class="callout">
+      <span lang="ru"><b>Честно о репозитории.</b> Он весит около двух гигабайт: весь проект вместе с
+        крупными бинарными ассетами уехал в git без нормального <code>.gitignore</code>. Клонировать его —
+        удовольствие ниже среднего. Если хочется посмотреть код, откройте
+        <code>Assets/Scripts/</code> прямо на GitHub. Сегодня я бы настроил это иначе.</span>
+      <span lang="en"><b>An honest note about the repository.</b> It weighs about two gigabytes: the whole
+        project, large binary assets included, went into git without a proper <code>.gitignore</code>.
+        Cloning it is no fun. If you only want the code, browse <code>Assets/Scripts/</code> on GitHub. I
+        would set this up differently today.</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="../"><span lang="ru">Главная</span><span lang="en">Home</span></a>
+      <a href="mailto:and.grigoryev2017@gmail.com">and.grigoryev2017@gmail.com</a>
+      <a href="https://github.com/broshkin" rel="noopener">GitHub</a>
+      <a href="https://t.me/grigoryev_andrew" rel="noopener">Telegram</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-ru="Yummy Universe — Андрей Григорьев" data-en="Yummy Universe — Andrey Grigoryev">Yummy Universe — Андрей Григорьев</title>
+<meta name="description"
+      content="Аркада «ешь и расти» на Unreal Engine 5. Соло-проект: масса как единственный стат, весовые категории, гравитационные сферы."
+      data-ru="Аркада «ешь и расти» на Unreal Engine 5. Соло-проект: масса как единственный стат, весовые категории, гравитационные сферы."
+      data-en="An eat-and-grow arcade in Unreal Engine 5. Solo project: mass as the only stat, weight categories, gravity spheres.">
+<meta name="theme-color" content="#0a0c10">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🕷️</text></svg>">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../">Андрей Григорьев<span class="dot">.</span></a>
+    <nav class="topnav">
+      <a href="../#projects"><span lang="ru">Проекты</span><span lang="en">Projects</span></a>
+      <a href="../#experience"><span lang="ru">Опыт</span><span lang="en">Experience</span></a>
+      <a href="../#contact"><span lang="ru">Контакты</span><span lang="en">Contact</span></a>
+    </nav>
+    <button class="langtoggle" type="button">EN</button>
+  </div>
+</div>
+
+<main>
+<article class="project-hero">
+  <div class="wrap">
+    <a class="backlink" href="../#projects">
+      <span lang="ru">← Все проекты</span><span lang="en">← All projects</span>
+    </a>
+
+    <p class="role" style="font-family:var(--mono);color:var(--accent);font-size:14px;margin:0 0 14px">
+      Unreal Engine 5 · Blueprints · 2026
+    </p>
+    <h1>Yummy Universe</h1>
+    <p class="lede" style="margin-top:18px">
+      <span lang="ru">Аркада «ешь и расти» в духе Tasty Planet. Глотаешь всё, что меньше тебя, становишься
+        больше — и глотаешь то, что раньше было слишком большим.</span>
+      <span lang="en">An eat-and-grow arcade in the spirit of Tasty Planet. You swallow everything smaller
+        than you are, get bigger, and then swallow the things that used to be too big.</span>
+    </p>
+
+    <div class="stage">
+      <video src="../assets/media/yummy-universe/loop.mp4" poster="../assets/media/yummy-universe/poster.jpg"
+             autoplay muted loop playsinline preload="metadata"
+             aria-label="Yummy Universe — геймплей"></video>
+    </div>
+
+    <dl class="facts">
+      <div><dt><span lang="ru">Движок</span><span lang="en">Engine</span></dt><dd>Unreal Engine 5</dd></div>
+      <div><dt><span lang="ru">Реализация</span><span lang="en">Built in</span></dt><dd>Blueprints</dd></div>
+      <div><dt><span lang="ru">Когда</span><span lang="en">When</span></dt>
+        <dd><span lang="ru">начало 2026</span><span lang="en">early 2026</span></dd></div>
+      <div><dt><span lang="ru">Роль</span><span lang="en">Role</span></dt>
+        <dd><span lang="ru">весь проект в одиночку</span><span lang="en">solo project</span></dd></div>
+      <div><dt><span lang="ru">Повод</span><span lang="en">Context</span></dt>
+        <dd><span lang="ru">курсовая, защищена дважды</span><span lang="en">university project, defended twice</span></dd></div>
+    </dl>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="https://youtu.be/5Ti2gLjg3hk" rel="noopener">
+        <span lang="ru">Смотреть трейлер</span><span lang="en">Watch the trailer</span>
+      </a>
+      <a class="btn" href="https://github.com/broshkin/YummyUniverse" rel="noopener">
+        <span lang="ru">Проект на GitHub</span><span lang="en">Project on GitHub</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+<section>
+  <div class="wrap">
+    <div class="prose">
+      <h3><span lang="ru">Зачем этот проект здесь</span><span lang="en">Why this project is here</span></h3>
+      <p>
+        <span lang="ru">Честная ценность Yummy Universe не в архитектуре: это проект на Blueprints, сделанный
+          одним человеком и в спешке, защищать там особо нечего. Он про другое — я беру второй движок и
+          довожу на нём игру до играбельной сборки с трейлером. За Unity-код смотрите
+          <a href="figure-spider.html">Figure Spider</a>.</span>
+        <span lang="en">The honest value of Yummy Universe is not its architecture: it is a Blueprint project
+          made by one person in a hurry, and there is not much to defend there. It is about something else —
+          I pick up a second engine and take a game to a playable build with a trailer. For Unity code, see
+          <a href="figure-spider.html">Figure Spider</a>.</span>
+      </p>
+
+      <h3><span lang="ru">Как устроено</span><span lang="en">How it works</span></h3>
+      <p>
+        <span lang="ru"><strong>Масса — единственный стат.</strong> Всё съеденное прибавляется к одному
+          значению массы, и оно решает всё: что можно съесть дальше, насколько крупным рисуется игрок и как
+          далеко отъезжает камера. За показ отвечает <code>WBP_PlayerMass</code>, за масштабирование —
+          <code>EasyScale_MS</code>.</span>
+        <span lang="en"><strong>Mass is the only stat.</strong> Everything the player eats adds to a single
+          mass value, and that value decides everything: what can be eaten next, how large the player renders
+          and how far the camera pulls back. <code>WBP_PlayerMass</code> shows it,
+          <code>EasyScale_MS</code> handles the scaling.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Объекты разложены по весовым категориям.</strong> <code>WeightCategory</code>
+          группирует всё съедобное по ступеням, поэтому на вопрос «можно ли это уже съесть» игра отвечает
+          сравнением, а не проверкой каждого объекта отдельно.</span>
+        <span lang="en"><strong>Objects are sorted into weight categories.</strong> <code>WeightCategory</code>
+          groups everything edible into tiers, so the game answers "can this be eaten yet" with a comparison
+          instead of a per-object check.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Гравитационные сферы.</strong> <code>BP_Gravity_Sphere</code> и отдельный
+          вариант для ИИ. Отсюда берётся почти всё интересное в движении: игрок не ходит по плоскости.</span>
+        <span lang="en"><strong>Gravity spheres.</strong> <code>BP_Gravity_Sphere</code> and a separate AI
+          variant. This is where most of the interesting movement comes from, since the player is not walking
+          on a flat plane.</span>
+      </p>
+      <p>
+        <span lang="ru">Спавнер поддерживает мир населённым по мере того, как игрок растёт и вычищает
+          область.</span>
+        <span lang="en">A spawner keeps the world populated as the player scales up and clears an area.</span>
+      </p>
+
+      <h3><span lang="ru">Что бы я сделал иначе сегодня</span><span lang="en">What I would do differently today</span></h3>
+      <p>
+        <span lang="ru">Вынес бы логику массы и весовых категорий в C++, а Blueprints оставил бы тому, в чём
+          они действительно хороши. Сейчас всё живёт в графе, а граф тяжело читать.</span>
+        <span lang="en">I would move the mass and weight-category logic into C++ and leave Blueprints for the
+          things Blueprints are actually good at. Right now everything lives in the graph, and the graph is
+          hard to read.</span>
+      </p>
+
+      <div class="callout">
+        <span lang="ru"><b>Про язык репозитория.</b> GitHub помечает проект как C++ из-за движковой обвязки
+          в <code>Source/</code>. Настоящая работа лежит в <code>Content/Blueprints/</code>.</span>
+        <span lang="en"><b>About the repository language.</b> GitHub reports the project as C++ because of the
+          engine boilerplate in <code>Source/</code>. The actual work is in
+          <code>Content/Blueprints/</code>.</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="../"><span lang="ru">Главная</span><span lang="en">Home</span></a>
+      <a href="mailto:and.grigoryev2017@gmail.com">and.grigoryev2017@gmail.com</a>
+      <a href="https://github.com/broshkin" rel="noopener">GitHub</a>
+      <a href="https://t.me/grigoryev_andrew" rel="noopener">Telegram</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-ru="Drift Escape — Андрей Григорьев" data-en="Drift Escape — Andrey Grigoryev">Drift Escape — Андрей Григорьев</title>
+<meta name="description"
+      content="Аркадный дрифт с погоней: NavMesh-преследование, лутбоксы, здоровье, задняя камера. Выходил на Яндекс.Играх. Unity, C#."
+      data-ru="Аркадный дрифт с погоней: NavMesh-преследование, лутбоксы, здоровье, задняя камера. Выходил на Яндекс.Играх. Unity, C#."
+      data-en="An arcade drift game with a chase: NavMesh pursuit, loot boxes, health, rear camera. Released on Yandex Games. Unity, C#.">
+<meta name="theme-color" content="#0a0c10">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🕷️</text></svg>">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../">Андрей Григорьев<span class="dot">.</span></a>
+    <nav class="topnav">
+      <a href="../#projects"><span lang="ru">Проекты</span><span lang="en">Projects</span></a>
+      <a href="../#experience"><span lang="ru">Опыт</span><span lang="en">Experience</span></a>
+      <a href="../#contact"><span lang="ru">Контакты</span><span lang="en">Contact</span></a>
+    </nav>
+    <button class="langtoggle" type="button">EN</button>
+  </div>
+</div>
+
+<main>
+<article class="project-hero">
+  <div class="wrap">
+    <a class="backlink" href="../#projects">
+      <span lang="ru">← Все проекты</span><span lang="en">← All projects</span>
+    </a>
+
+    <p class="role" style="font-family:var(--mono);color:var(--accent);font-size:14px;margin:0 0 14px">
+      Unity · C# · 2024
+    </p>
+    <h1>Drift Escape</h1>
+    <p class="lede" style="margin-top:18px">
+      <span lang="ru">Аркадный дрифт: ты едешь, за тобой гонятся, ты собираешь добычу и стараешься
+        выжить.</span>
+      <span lang="en">An arcade drift game: you drive, things chase you, and you collect loot while staying
+        alive.</span>
+    </p>
+
+    <div class="stage">
+      <img src="../assets/media/drift-escape/character.jpg" alt="" width="720" height="720">
+    </div>
+
+    <dl class="facts">
+      <div><dt><span lang="ru">Движок</span><span lang="en">Engine</span></dt><dd>Unity, C#</dd></div>
+      <div><dt><span lang="ru">Платформа</span><span lang="en">Platform</span></dt>
+        <dd><span lang="ru">браузер, WebGL</span><span lang="en">browser, WebGL</span></dd></div>
+      <div><dt><span lang="ru">Когда</span><span lang="en">When</span></dt><dd>2024</dd></div>
+      <div><dt><span lang="ru">Релиз</span><span lang="en">Release</span></dt>
+        <dd><span lang="ru">Яндекс.Игры, снята с платформы</span><span lang="en">Yandex Games, since taken down</span></dd></div>
+    </dl>
+
+    <div class="actions">
+      <a class="btn" href="https://github.com/broshkin/Drift_Rider" rel="noopener">
+        <span lang="ru">Код на GitHub</span><span lang="en">Code on GitHub</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+<section>
+  <div class="wrap">
+    <div class="prose">
+      <div class="callout">
+        <span lang="ru"><b>Играть больше негде.</b> Игра выходила на Яндекс.Играх, какое-то время работала на
+          платформе и была с неё снята. Остался код — и он открыт.</span>
+        <span lang="en"><b>There is nothing left to play.</b> The game was released on Yandex Games, ran on
+          the platform for a while and was later taken down. What is left is the code, and it is public.</span>
+      </div>
+
+      <h3 style="margin-top:34px"><span lang="ru">Как устроено</span><span lang="en">How it works</span></h3>
+      <p>
+        <span lang="ru"><strong>Погоня идёт по NavMesh.</strong> <code>NavMeshAgentMoving.cs</code> водит
+          преследователей, а <code>PointToEnemy.cs</code> рисует индикатор на экране, чтобы игрок понимал,
+          откуда давят, продолжая смотреть вперёд.</span>
+        <span lang="en"><strong>Enemies chase on a NavMesh.</strong> <code>NavMeshAgentMoving.cs</code> drives
+          the pursuers and <code>PointToEnemy.cs</code> puts an indicator on screen so the player knows where
+          the pressure is coming from while still looking forward.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Задняя камера появилась не для красоты.</strong> <code>RearCamera.cs</code>
+          существует потому, что без неё оценить погоню по-настоящему тяжело.</span>
+        <span lang="en"><strong>The rear-view camera is not decoration.</strong> <code>RearCamera.cs</code>
+          exists because it is genuinely hard to judge a chase without it.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Дрифт засчитывается только на земле.</strong>
+          <code>CheckWheelOnGround.cs</code> гейтит дрифт и начисление очков на том, действительно ли машина
+          касается дороги. Это закрыло фарм очков в воздухе.</span>
+        <span lang="en"><strong>Drifting only counts on the ground.</strong>
+          <code>CheckWheelOnGround.cs</code> gates drifting and scoring on whether the car is actually
+          touching the road, which stopped players from farming score mid-air.</span>
+      </p>
+      <p>
+        <span lang="ru">Плюс лутбоксы и подборы (<code>LootBoxSystem.cs</code>, <code>CatchLoot.cs</code>,
+          <code>CatchHeal.cs</code>) и здоровье с реальными последствиями от догнавших машин
+          (<code>PlayerHealth.cs</code>, <code>PunchPlayer.cs</code>).</span>
+        <span lang="en">Plus loot boxes and pickups (<code>LootBoxSystem.cs</code>, <code>CatchLoot.cs</code>,
+          <code>CatchHeal.cs</code>) and health with real consequences from the cars that catch you
+          (<code>PlayerHealth.cs</code>, <code>PunchPlayer.cs</code>).</span>
+      </p>
+
+      <h3><span lang="ru">Что здесь не моё</span><span lang="en">What is not mine here</span></h3>
+      <p>
+        <span lang="ru">Физику машины я не писал: управление автомобилем — это PROMETEO Car Controller из
+          Asset Store. Я предпочитаю сказать об этом прямо, чем позволить думать иначе. Моё — игра вокруг
+          него: погоня, лут, здоровье, интерфейс, пауза и настройки. Мой код лежит в
+          <code>Assets/Scripts/</code>, <code>Assets/PROMETEO - Car Controller/</code> — покупной
+          ассет.</span>
+        <span lang="en">I did not write the vehicle physics: the car handling is the PROMETEO Car Controller
+          from the Asset Store. I would rather say so than let someone assume otherwise. Mine is the game
+          around it: the chase, loot, health, UI, pause and settings. My code is under
+          <code>Assets/Scripts/</code>; <code>Assets/PROMETEO - Car Controller/</code> is the store
+          asset.</span>
+      </p>
+
+      <h3><span lang="ru">Что бы я сделал иначе сегодня</span><span lang="en">What I would do differently today</span></h3>
+      <p>
+        <span lang="ru">Подборы стали бы одним компонентом: <code>CatchLoot</code> и <code>CatchHeal</code> —
+          два почти одинаковых MonoBehaviour, отличающихся тем, что они добавляют игроку. Это один компонент
+          с настраиваемым эффектом. И <code>Assets/Scripts/</code> получил бы структуру: сейчас всё лежит
+          плоско в одной папке. На восемнадцати файлах это переживаемо, на шестидесяти — уже нет.</span>
+        <span lang="en">The pickups would be one component: <code>CatchLoot</code> and <code>CatchHeal</code>
+          are two near-identical MonoBehaviours that differ only in what they add to the player. That is a
+          single component with a configurable effect. And <code>Assets/Scripts/</code> would have structure:
+          right now everything sits flat in one folder. At eighteen files that is survivable. At sixty it
+          would not be.</span>
+      </p>
+
+      <h3><span lang="ru">Чем это было</span><span lang="en">What this was</span></h3>
+      <p>
+        <span lang="ru">Небольшой изданный тайтл, а не витринная работа. Он вышел, поработал на платформе и
+          больше там не числится.</span>
+        <span lang="en">A small published title rather than a portfolio piece. It shipped, ran on the platform
+          for a while, and is no longer listed there.</span>
+      </p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="../"><span lang="ru">Главная</span><span lang="en">Home</span></a>
+      <a href="mailto:and.grigoryev2017@gmail.com">and.grigoryev2017@gmail.com</a>
+      <a href="https://github.com/broshkin" rel="noopener">GitHub</a>
+      <a href="https://t.me/grigoryev_andrew" rel="noopener">Telegram</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

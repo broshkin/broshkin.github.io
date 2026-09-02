@@ -1,0 +1,532 @@
+/* Andrey Grigoryev — portfolio
+   Ни фреймворков, ни внешних шрифтов, ни CDN. */
+
+:root {
+  --bg: #0a0c10;
+  --bg-raised: #11141a;
+  --bg-sunken: #070910;
+  --line: #1e232c;
+  --line-strong: #2b323e;
+  --ink: #e8ecf2;
+  --ink-dim: #9aa4b2;
+  --ink-faint: #6b7482;
+  --accent: #7fb2ff;
+  --accent-glow: rgba(127, 178, 255, 0.14);
+  --warn: #ffb454;
+
+  --mono: ui-monospace, "Cascadia Mono", "JetBrains Mono", Consolas, "Courier New", monospace;
+  --sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+
+  --page: 1080px;
+  --gap: clamp(16px, 4vw, 32px);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ---------- переключение языка ---------- */
+
+:root[lang="ru"] [lang="en"] { display: none; }
+:root[lang="en"] [lang="ru"] { display: none; }
+
+/* ---------- базовая типографика ---------- */
+
+h1, h2, h3 {
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(38px, 7vw, 68px); }
+h2 { font-size: clamp(24px, 3.4vw, 34px); }
+h3 { font-size: clamp(19px, 2.2vw, 22px); }
+
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+strong { font-weight: 650; color: #fff; }
+
+code {
+  font-family: var(--mono);
+  font-size: 0.87em;
+  background: var(--bg-sunken);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 6px;
+  color: #cbd5e3;
+  word-break: break-word;
+}
+
+img, video { max-width: 100%; display: block; }
+
+::selection { background: rgba(127, 178, 255, 0.28); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: #06080c;
+  padding: 10px 16px;
+  font-weight: 600;
+  z-index: 100;
+}
+.skip:focus { left: 12px; top: 12px; }
+
+/* ---------- сетка страницы ---------- */
+
+.wrap {
+  width: 100%;
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 0 var(--gap);
+}
+
+section { padding: clamp(48px, 8vw, 88px) 0; }
+section + section { border-top: 1px solid var(--line); }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 14px;
+}
+
+.lede {
+  font-size: clamp(18px, 2.2vw, 21px);
+  color: var(--ink-dim);
+  max-width: 62ch;
+}
+
+/* ---------- верхняя панель ---------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(12px);
+  background: rgba(10, 12, 16, 0.82);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 58px;
+}
+
+.brand {
+  font-weight: 650;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-right: auto;
+  font-size: 15px;
+}
+.brand:hover { text-decoration: none; color: #fff; }
+.brand .dot { color: var(--accent); }
+
+.topnav {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+.topnav a { color: var(--ink-dim); }
+.topnav a:hover { color: var(--ink); text-decoration: none; }
+
+@media (max-width: 700px) { .topnav { display: none; } }
+
+.langtoggle {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  background: transparent;
+  color: var(--ink-dim);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.langtoggle:hover { color: var(--ink); border-color: var(--ink-faint); }
+
+/* ---------- хиро ---------- */
+
+.hero { padding-top: clamp(56px, 10vw, 104px); }
+
+.hero h1 { max-width: 15ch; }
+
+.hero .role {
+  font-family: var(--mono);
+  font-size: clamp(13px, 1.6vw, 15px);
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin: 0 0 22px;
+}
+
+.hero .lede { margin-top: 26px; }
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 26px;
+  font-size: 14px;
+  color: var(--ink-faint);
+  font-family: var(--mono);
+}
+
+/* ---------- кнопки ---------- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 550;
+  background: var(--bg-raised);
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+.btn:hover {
+  text-decoration: none;
+  border-color: var(--ink-faint);
+  background: #171b23;
+  transform: translateY(-1px);
+}
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #06080c;
+  font-weight: 650;
+}
+.btn-primary:hover { background: #9cc4ff; border-color: #9cc4ff; }
+
+/* ---------- навыки ---------- */
+
+.skills {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 20px 28px;
+  margin-top: 34px;
+}
+.skills dt {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-top: 4px;
+}
+.skills dd { margin: 0; color: var(--ink-dim); }
+.skills dd b { color: var(--ink); font-weight: 550; }
+
+@media (max-width: 640px) {
+  .skills { grid-template-columns: 1fr; gap: 6px 0; }
+  .skills dd { margin-bottom: 18px; }
+}
+
+/* ---------- сетка проектов ---------- */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  color: inherit;
+  transition: border-color 0.18s, transform 0.18s;
+}
+.card:hover {
+  text-decoration: none;
+  border-color: var(--line-strong);
+  transform: translateY(-3px);
+}
+.card:hover .card-title { color: var(--accent); }
+
+.card-media {
+  aspect-ratio: 16 / 9;
+  background: var(--bg-sunken);
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+.card-media img, .card-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+
+.card-title {
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  transition: color 0.18s;
+}
+
+.card-note {
+  margin-top: 7px;
+  color: var(--ink-dim);
+  font-size: 15px;
+  flex: 1;
+}
+
+.card-tags {
+  margin-top: 15px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+}
+
+.card-flag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid rgba(127, 178, 255, 0.25);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+}
+
+/* ---------- «ещё» — компактный список ---------- */
+
+.more-list {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.more-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+}
+.more-list .name { font-weight: 600; }
+.more-list .desc { color: var(--ink-dim); font-size: 15px; flex: 1; min-width: 220px; }
+.more-list .links { font-size: 14px; font-family: var(--mono); }
+
+/* ---------- опыт ---------- */
+
+.job { margin-top: 34px; }
+.job:first-of-type { margin-top: 28px; }
+
+.job-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 18px;
+}
+.job-title { font-size: 20px; font-weight: 650; letter-spacing: -0.01em; }
+.job-title .sep { color: var(--ink-faint); font-weight: 400; }
+.job-when { font-family: var(--mono); font-size: 13px; color: var(--ink-faint); white-space: nowrap; }
+.job-where { font-size: 14px; color: var(--ink-faint); margin-top: 3px; }
+
+.job ul, .prose ul { margin: 12px 0 0; padding-left: 20px; color: var(--ink-dim); }
+.job li, .prose li { margin-bottom: 8px; }
+.job li::marker, .prose li::marker { color: var(--ink-faint); }
+
+/* ---------- награды ---------- */
+
+.awards { list-style: none; margin: 28px 0 0; padding: 0; }
+.awards li {
+  padding: 14px 0 14px 20px;
+  border-left: 2px solid var(--line-strong);
+  margin-bottom: 6px;
+  color: var(--ink-dim);
+}
+.awards li b { color: var(--ink); font-weight: 600; }
+
+/* ---------- страница проекта ---------- */
+
+.project-hero { padding: clamp(34px, 6vw, 56px) 0 0; }
+
+.backlink {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  display: inline-block;
+  margin-bottom: 26px;
+}
+.backlink:hover { color: var(--accent); text-decoration: none; }
+
+.stage {
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-sunken);
+}
+.stage img, .stage video { width: 100%; display: block; }
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  margin-top: 28px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.facts div { background: var(--bg-raised); padding: 15px 18px; }
+.facts dt {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 5px;
+}
+.facts dd { margin: 0; font-size: 15px; }
+
+.prose { max-width: 68ch; }
+.prose h3 { margin: 34px 0 12px; }
+.prose h3:first-child { margin-top: 0; }
+.prose p, .prose ul { color: var(--ink-dim); }
+.prose p strong, .prose li strong { color: var(--ink); }
+
+.callout {
+  margin: 28px 0 0;
+  padding: 18px 22px;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--warn);
+  border-radius: 8px;
+  color: var(--ink-dim);
+  font-size: 15.5px;
+}
+.callout b { color: var(--ink); }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin-top: 30px;
+}
+.gallery figure { margin: 0; }
+.gallery img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-sunken);
+}
+.gallery figcaption {
+  margin-top: 8px;
+  font-size: 13.5px;
+  color: var(--ink-faint);
+}
+
+/* ---------- фасад ютуб-трейлера ---------- */
+
+.trailer {
+  position: relative;
+  margin-top: 30px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-sunken);
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+  width: 100%;
+  padding: 0;
+  display: block;
+}
+.trailer img { width: 100%; height: 100%; object-fit: cover; opacity: 0.72; transition: opacity 0.2s; }
+.trailer:hover img { opacity: 0.9; }
+.trailer iframe { width: 100%; height: 100%; border: 0; display: block; }
+.trailer .play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.trailer .play span {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #06080c;
+  background: var(--accent);
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/* ---------- подвал ---------- */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 44px 0 60px;
+  color: var(--ink-faint);
+  font-size: 15px;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.footer-note { font-size: 13.5px; max-width: 60ch; }
