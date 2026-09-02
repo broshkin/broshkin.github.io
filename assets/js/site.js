@@ -1,5 +1,6 @@
-/* Переключатель языка и фасад ютуб-трейлера.
-   Без JS страница остаётся полностью читаемой на русском. */
+/* Переключатель языка и превью проектов на карточках.
+   Без JS страница остаётся полностью читаемой на русском,
+   а карточки показывают статичный кадр вместо видео. */
 
 (function () {
   'use strict';
@@ -47,38 +48,55 @@
 
   document.addEventListener('click', function (e) {
     var toggle = e.target.closest('.langtoggle');
-    if (toggle) {
-      var next = root.getAttribute('lang') === 'ru' ? 'en' : 'ru';
-      store(STORE, next);
-      apply(next);
-      return;
-    }
-
-    /* Трейлер подгружается только по клику: до этого ни одного запроса на YouTube */
-    var facade = e.target.closest('.trailer[data-video]');
-    if (facade) play(facade);
+    if (!toggle) return;
+    var next = root.getAttribute('lang') === 'ru' ? 'en' : 'ru';
+    store(STORE, next);
+    apply(next);
   });
 
-  /* Кнопка-фасад: клавиатура работает сама, но подстрахуемся для не-button разметки */
-  document.addEventListener('keydown', function (e) {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    var facade = e.target.closest && e.target.closest('.trailer[data-video]');
-    if (facade && facade.tagName !== 'BUTTON') {
-      e.preventDefault();
-      play(facade);
-    }
-  });
+  /* ---- превью на карточках ----
+     Мышь есть: по умолчанию постер, трейлер идёт под курсором.
+     Мыши нет (телефон, планшет): наводить нечем, поэтому играем, когда карточка в экране. */
 
-  function play(facade) {
-    var frame = document.createElement('iframe');
-    frame.src = 'https://www.youtube-nocookie.com/embed/' + facade.getAttribute('data-video') + '?autoplay=1&rel=0';
-    frame.title = facade.getAttribute('data-title') || 'Trailer';
-    frame.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
-    frame.allowFullscreen = true;
+  var previews = Array.prototype.slice.call(document.querySelectorAll('.card-media video'));
+  if (!previews.length) return;
 
-    var box = document.createElement('div');
-    box.className = 'trailer';
-    box.appendChild(frame);
-    facade.replaceWith(box);
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  function start(v) {
+    var p = v.play();
+    if (p && p.catch) p.catch(function () { /* браузер не дал — остаётся постер */ });
   }
+
+  function stop(v) {
+    v.pause();
+    v.load(); /* возвращает постер вместо застывшего кадра */
+  }
+
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    previews.forEach(function (v) {
+      var card = v.closest('.card') || v;
+      card.addEventListener('mouseenter', function () { start(v); });
+      card.addEventListener('mouseleave', function () { stop(v); });
+      /* с клавиатуры карточка тоже оживает */
+      card.addEventListener('focus', function () { start(v); });
+      card.addEventListener('blur', function () { stop(v); });
+    });
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    previews.forEach(start);
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) start(entry.target);
+      else entry.target.pause();
+    });
+  }, { threshold: 0.4 });
+
+  previews.forEach(function (v) { io.observe(v); });
 })();
