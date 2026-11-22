@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-ru="Steve vs Monsters — Андрей Григорьев" data-en="Steve vs Monsters — Andrey Grigoryev">Steve vs Monsters — Андрей Григорьев</title>
+<meta name="description"
+      content="3D tower defense на Unity 6 для Яндекс Игр. Ведущий разработчик: 300 из 322 коммитов, 174 автотеста, миграция с Unity 2021 на Unity 6."
+      data-ru="3D tower defense на Unity 6 для Яндекс Игр. Ведущий разработчик: 300 из 322 коммитов, 174 автотеста, миграция с Unity 2021 на Unity 6."
+      data-en="A 3D tower defense in Unity 6 for Yandex Games. Lead developer: 300 of 322 commits, 174 automated tests, migration from Unity 2021 to Unity 6.">
+<meta name="theme-color" content="#0a0c10">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🕷️</text></svg>">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../"><span lang="ru">Андрей Григорьев</span><span lang="en">Andrey Grigoryev</span><span class="dot">.</span></a>
+    <nav class="topnav">
+      <a href="../#projects"><span lang="ru">Проекты</span><span lang="en">Projects</span></a>
+      <a href="../#experience"><span lang="ru">Опыт</span><span lang="en">Experience</span></a>
+      <a href="../#contact"><span lang="ru">Контакты</span><span lang="en">Contact</span></a>
+    </nav>
+    <button class="langtoggle" type="button">EN</button>
+  </div>
+</div>
+
+<main>
+<article class="project-hero">
+  <div class="wrap">
+    <a class="backlink" href="../#projects">
+      <span lang="ru">← Все проекты</span><span lang="en">← All projects</span>
+    </a>
+
+    <p class="role" style="font-family:var(--mono);color:var(--accent);font-size:14px;margin:0 0 14px">
+      Unity 6 · URP · WebGL · 2025–2026
+    </p>
+    <h1>Steve vs Monsters</h1>
+    <p class="lede" style="margin-top:18px">
+      <span lang="ru">3D tower defense в стилистике Minecraft, в духе Plants vs Zombies, только вместо
+        растений жители, големы и криперы. Зомби идут по шести линиям к деревне, игрок расставляет героев
+        и держит оборону до босса.</span>
+      <span lang="en">A 3D side-view tower defense in a Minecraft-style setting, in the spirit of Plants vs
+        Zombies but with villagers, golems and creepers. Zombies march down six lanes toward the village;
+        you place heroes and hold the line until the boss arrives.</span>
+    </p>
+
+    <div class="stage">
+      <img src="../assets/media/steve-vs-monsters/menu.jpg" alt="Steve vs Monsters" width="1280" height="720">
+    </div>
+
+    <dl class="facts">
+      <div><dt><span lang="ru">Движок</span><span lang="en">Engine</span></dt><dd>Unity 6, URP 17, C#</dd></div>
+      <div><dt><span lang="ru">Платформа</span><span lang="en">Platform</span></dt>
+        <dd><span lang="ru">браузер, WebGL (Яндекс Игры)</span><span lang="en">browser, WebGL (Yandex Games)</span></dd></div>
+      <div><dt><span lang="ru">Срок</span><span lang="en">Timeline</span></dt>
+        <dd><span lang="ru">с июля 2025, в разработке</span><span lang="en">July 2025 to now, in development</span></dd></div>
+      <div><dt><span lang="ru">Роль</span><span lang="en">Role</span></dt>
+        <dd><span lang="ru">ведущий разработчик, 300 из 322 коммитов</span><span lang="en">lead developer, 300 of 322 commits</span></dd></div>
+      <div><dt><span lang="ru">Студия</span><span lang="en">Studio</span></dt><dd>Vantuz Studio</dd></div>
+    </dl>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="../play/steve-vs-monsters/">
+        <span lang="ru">Играть в браузере</span><span lang="en">Play in the browser</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+<section>
+  <div class="wrap">
+    <div class="prose">
+      <h3><span lang="ru">Что делал я</span><span lang="en">What I did</span></h3>
+      <p>
+        <span lang="ru">Я ведущий разработчик проекта: 300 из 322 коммитов и больше сотни C#-скриптов. На
+          мне игровой цикл, герои и враги, экономика, уровни, интерфейс, переезд на Unity 6 и тесты.</span>
+        <span lang="en">I am the lead developer: 300 of 322 commits and more than a hundred C# scripts. The
+          game loop, heroes and enemies, economy, levels, UI, the move to Unity 6 and the test suite are
+          mine.</span>
+      </p>
+
+      <h3><span lang="ru">Как устроено</span><span lang="en">How it works</span></h3>
+      <p>
+        <span lang="ru"><strong>12 героев на общей базе.</strong> Лучник, снеговик, который замедляет,
+          морковка, которая приносит монеты, козёл, таранящий всю линию, динамит, лягушка, голем, дверь,
+          мина и другие. Каждый — наследник одного класса <code>Hero</code>, поэтому новый герой не трогает
+          ни поле, ни экономику.</span>
+        <span lang="en"><strong>12 heroes on a shared base.</strong> An archer, a snowman that slows enemies,
+          a carrot that produces coins, a goat that rams an entire lane, TNT, a frog, a golem, a door, a mine
+          and more. Each one derives from a single <code>Hero</code> class, so adding a hero touches neither
+          the field nor the economy.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Уровни — это данные, а не сцены.</strong> Волна описывается текстом,
+          строка за строкой: <code>время;враг;линия</code>. Геймдизайнер собирает и правит уровень, не
+          открывая редактор и не трогая код.</span>
+        <span lang="en"><strong>Levels are data, not scenes.</strong> A wave is plain text, one line per
+          spawn: <code>time;enemy;lane</code>. A designer can build and tune a level without opening the
+          editor or touching code.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Босс.</strong> Зомби-босс подбрасывает обычных зомби на поле и бьёт прыжком.
+          Звёзды за уровень даются тем больше, чем меньше героев понадобилось.</span>
+        <span lang="en"><strong>The boss.</strong> The Zombie Boss throws regular zombies onto the field and
+          lands a jump attack. Star ratings reward clearing a level with fewer heroes.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Переезд с Unity 2021 на Unity 6 и 174 автотеста.</strong> Я перевёл проект
+          на Unity 6 и URP 17 и оформил полный аудит миграции. Игровую логику покрыл 174 EditMode-тестами на
+          Unity Test Framework, поэтому правки баланса и новые герои не ломают старое незаметно.</span>
+        <span lang="en"><strong>Unity 2021 to Unity 6, and 174 automated tests.</strong> I moved the project
+          to Unity 6 and URP 17 and documented the migration as a full audit. Gameplay logic is covered by
+          174 EditMode tests on the Unity Test Framework, so balance changes and new heroes cannot quietly
+          break what already works.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Слабое железо.</strong> Игра работает в браузере, в том числе на телефонах,
+          поэтому за вызовами отрисовки, аллокациями в кадре и весом сборки я слежу постоянно.</span>
+        <span lang="en"><strong>Weak hardware.</strong> The game runs in the browser, phones included, so
+          draw calls, per-frame allocations and build size are things I watch all the time.</span>
+      </p>
+      <p>
+        <span lang="ru"><strong>Инструменты.</strong> Для проекта я написал claude-unity-bridge — файловый
+          мост, через который ИИ-агенты управляют редактором Unity. Рутину делают агенты, все их
+          результаты проходят ревью.</span>
+        <span lang="en"><strong>Tooling.</strong> For this project I wrote claude-unity-bridge, a file-based
+          bridge that lets AI agents drive the Unity Editor. Agents take the routine work, and everything they
+          produce goes through review.</span>
+      </p>
+    </div>
+
+    <div class="gallery">
+      <figure>
+        <img src="../assets/media/steve-vs-monsters/heroes.jpg" alt="" loading="lazy">
+        <figcaption><span lang="ru">Выбор героев перед уровнем.</span><span lang="en">Picking heroes before a level.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/media/steve-vs-monsters/field.jpg" alt="" loading="lazy">
+        <figcaption><span lang="ru">Поле боя и обучение.</span><span lang="en">The field and the tutorial.</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="callout">
+      <span lang="ru"><b>Код закрыт.</b> Это коммерческий проект студии, репозиторий приватный. Сборку можно
+        запустить прямо в браузере, а про устройство кода охотно расскажу на собеседовании.</span>
+      <span lang="en"><b>The code is private.</b> This is a commercial studio title. You can play the build right
+        in the browser, and I am happy to walk through the code in an interview.</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="../"><span lang="ru">Главная</span><span lang="en">Home</span></a>
+      <a href="mailto:and.grigoryev2017@gmail.com">and.grigoryev2017@gmail.com</a>
+      <a href="https://github.com/broshkin" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/andrey-grigoryev-541a34372" rel="noopener">LinkedIn</a>
+      <a href="https://t.me/grigoryev_andrew" rel="noopener">Telegram</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
